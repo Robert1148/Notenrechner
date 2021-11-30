@@ -3,5 +3,7 @@ h1 {
         color: #c61ca6;}
 
 p { font-size: large;
-        color: #ca50ce
-}
+        color: #ca50ce}
+
+body{ background-color: aqua;
+        text-align: center}
