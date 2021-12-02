@@ -1,93 +1,69 @@
-let n1, n2, n3, n4, n5;
-let anzahlNoten = 5;
-
-function noteRechnen() {
+let n1, n2, n3, n4, n5, n6;
+let anzahlNoten = 6;
+function notenRechner() {
     let ergebnis;
-    n1 = parseInt(document.getElementById("eingabe1").value);
-    n2 = parseInt(document.getElementById("eingabe1").value);
-    n3 = parseInt(document.getElementById("eingabe1").value);
-    n4 = parseInt(document.getElementById("eingabe1").value);
-    n5 = parseInt(document.getElementById("eingabe1").value);
-    n6 = parseInt(document.getElementById("eingabe1").value);
-    console.log(n1 + ";" + n2 + ";" + n3 +";" +n4 + ";" + n5 + ";" + n6)
+    n1 = parseInt(document.getElementById("sample1").value);
+    n2 = parseInt(document.getElementById("sample2").value);
+    n3 = parseInt(document.getElementById("sample3").value);
+    n4 = parseInt(document.getElementById("sample4").value);
+    n5 = parseInt(document.getElementById("sample5").value);
+    n6 = parseInt(document.getElementById("sample6").value);
+    console.log(n1 + ";" + n3 + ";" + n4 + ";" + n5 + ";" + n6)
     ergebnis = summeBerechnen()/anzahlNoten;
     console.log(ergebnis);
-    document.getElementById(  "durchschnitt").innerHTML = ergebnis
-    if(ergebnis < 5) {
-        document.getElementById("durchschnitt").style.color = "crismon";
+    document.getElementById("durchschnitt").innerHTML = ergebnis;
+    if (ergebnis < 5) {
+        document.getElementById("durchschnitt").style.color = "#ff00f4";
     }
-    if (ergebnis >= 5) {
-        document.getElementById("durchschnitt").style.color = "red";
+    if (ergebnis > 5 && ergebnis < 10) {
+
+        document.getElementById("durchschnitt").style.color = "orange";
+    }
+    if (ergebnis >= 10) {
+        document.getElementById("durchschnitt").style.color = "#0022ff";
     }
     anzahlNoten = 6;
     return ergebnis;
 }
 
 function summeBerechnen() {
-    let summe = 0;
-    if(inNaN(n1)){
-        console.log(summe);
-        console.log("n1 ist 0");
+    let summe = 0 ;
+    if (isNaN(n1)) {
         anzahlNoten = anzahlNoten - 1;
-        console.log("anzahlNoten:" + anzahlNoten);
-    }
-    else{
-        summe = summe + n1;
-        console.log("Summe ist:" + summe);
-    }
-    if(inNaN(n2)){
-        console.log(summe);
-        console.log("n2 ist 0");
-        anzahlNoten = anzahlNoten - 1;
-        console.log("anzahlNoten:" + anzahlNoten);
-    }
-    else{
-        summe = summe + n2;
-        console.log("Summe ist:" + summe);
-    }
+    } else {
+        summe = summe + n1
 
-    if(inNaN(n3)){
-        console.log(summe);
-        console.log("n3 ist 0");
+    }
+    if (isNaN(n2)) {
         anzahlNoten = anzahlNoten - 1;
-        console.log("anzahlNoten:" + anzahlNoten);
-    }
-    else{
-        summe = summe + n3;
-        console.log("Summe ist:" + summe);
-    }
+    } else {
+        summe = summe + n2
 
-    if(inNaN(n4)){
-        console.log(summe);
-        console.log("n4 ist 0");
+    }
+    if (isNaN(n3)) {
         anzahlNoten = anzahlNoten - 1;
-        console.log("anzahlNoten:" + anzahlNoten);
-    }
-    else{
-        summe = summe + n4;
-        console.log("Summe ist:" + summe);
-    }
+    } else {
+        summe = summe + n3
 
-    if(inNaN(n5)){
-        console.log(summe);
-        console.log("n5 ist 0");
+    }
+    if(isNaN(n4)) {
         anzahlNoten = anzahlNoten - 1;
-        console.log("anzahlNoten:" + anzahlNoten);
-    }
-    else{
-        summe = summe + n5;
-        console.log("Summe ist:" + summe);
-    }
+    } else {
+        summe = summe + n4
 
-    if(inNaN(n6)){
-        console.log(summe);
-        console.log("n6 ist 0");
+    }
+    if (isNaN(n5)) {
         anzahlNoten = anzahlNoten - 1;
-        console.log("anzahlNoten:" + anzahlNoten);
+    } else {
+        summe = summe + n5
+
     }
-    else{
-        summe = summe + n6;
-        console.log("Summe ist:" + summe);
+    if (isNaN(n6)) {
+        anzahlNoten = anzahlNoten - 1;
+    } else {
+        summe = summe + n6
+
     }
+    return summe;
 
 }
